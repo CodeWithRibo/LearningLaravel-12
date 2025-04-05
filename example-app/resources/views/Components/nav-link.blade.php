@@ -5,8 +5,10 @@
     {{$attributes}} >{{$slot}}</a>  --}}
 
     @props(['type' => 'anchor'])
-
-    @if($type === 'anchor')
+    <a {{ $attributes }} class="text-blue-500 hover:text-blue-700" >
+        {{ $slot }}
+    </a>
+    {{-- @if($type === 'anchor')
         <a {{ $attributes }} class="text-blue-500 hover:text-blue-700" >
             {{ $slot }}
         </a>
@@ -14,4 +16,5 @@
         <button class="bg-blue-500 text-white py-2 px-4 hover:bg-blue-700 {{ $attributes }}">
             {{ $slot }}
         </button>
-    @endif
+    @endif --}}
+    

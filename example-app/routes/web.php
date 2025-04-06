@@ -4,17 +4,19 @@ use Illuminate\Support\Facades\Route;
 
 #Defined on what web browser reponsed in http request
 Route::get('/', function () {
-    return view('home');
+
+    $data = [
+        'users' => [ 
+            ['name' => 'Alice', 'skill' => 'PHP', 'id' => 1],
+            ['name' => 'Charlie', 'skill' => 'Python', 'id' => 2],
+            ['name' => 'Charlie', 'skill' => 'Python', 'id' => 3],
+        ]
+    ];
+
+    return view('RiboBlog.index', ["users" => $data['users']]);
 });
 
-Route::get('contact', function () {
-    return view('contact');
-});
+Route::get('/{id}', function ($id) {
 
-Route::get('about', function () {
-    return view('about');
-});
-
-Route::get('/button', function () {
-    return view('Components/button');
+    return view('Riboblog.show', data: ["id" => $id]);
 });

@@ -14,16 +14,17 @@ return new class extends Migration
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table ->string('title');
-            $table-> boolean('is_complete');
+            $table->string('title');
+            $table->boolean('is_complete');
         });
     }
 
     /**
      * Reverse the migrations.
+     *
      */
-    public function down(): void
+    public function down() 
     {
-        Schema::dropIfExists('todos');
+        // Schema::dropIfExists('todos');
     }
 };

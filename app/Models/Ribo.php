@@ -9,7 +9,6 @@ class Ribo extends Model
 {
     #Mass Assginment for columns value
     protected $fillable = ['name','skill','bio'];
-    
     /** @use HasFactory<\Database\Factories\RiboFactory> */
     use HasFactory;
 }

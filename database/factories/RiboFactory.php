@@ -20,7 +20,6 @@ class RiboFactory extends Factory
             'name' => fake()->name(),
             'bio' => fake()->realText(500),
             'skill' => fake()->numberBetween(1,100)
-
         ];
     }
 }

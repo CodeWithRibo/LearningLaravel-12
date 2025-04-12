@@ -13,7 +13,6 @@ class RiboSeeder extends Seeder
      */
     public function run(): void
     {
-
         Ribo::factory()->count(50)->create();
     }
 }

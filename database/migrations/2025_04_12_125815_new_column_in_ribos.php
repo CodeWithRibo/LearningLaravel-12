@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ribos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table-> string('name');
-            $table-> integer('skill');
-            $table->text('bio');
+        Schema::table('ribos', function (Blueprint $table) {
+            $table -> string('status');
+            $table -> string('age');
         });
     }
 
@@ -25,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // Schema::dropIfExists('ribos');
+        Schema::table('ribos', function (Blueprint $table) {
+            Schema::dropColumns('ribos','status');
+        });
     }
 };

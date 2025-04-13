@@ -17,7 +17,7 @@ class RiboFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->unique()->name(),
+            'name' => fake()->name(),
             'bio' => fake()->realText(500),
             'skill' => fake()->numberBetween(1,100),
             'status' => fake()->randomElement(['complete','incomplete','progress']),

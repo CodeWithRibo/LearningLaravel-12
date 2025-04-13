@@ -10,6 +10,12 @@ class Ribo extends Model
     #Mass Assginment for columns value
     protected $fillable = ['name','skill','bio','status'];
     protected $guarded = ['id'];
+
+    public function scopeSorted($query)
+    {
+        return $query->orderBy('created_at', 'asc');
+    }
+    
     /** @use HasFactory<\Database\Factories\RiboFactory> */
     use HasFactory;
 }

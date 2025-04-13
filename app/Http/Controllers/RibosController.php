@@ -4,20 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Ribo;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class RibosController extends Controller 
 {
+    protected $ribo;
+
     public function index()
     {
-        $ribo = Ribo::orderBy('created_at','asc')->get();
+        $this->ribo = Ribo::sorted()->get();
 
-        return view('RiboBlog.index', ['users' => $ribo]);
+        return view('RiboBlog.index', ['users' => $this->ribo]);
     }
 
     public function show($id)
     {
-        $ribo = Ribo::findOrFail($id);
-        return view('RiboBlog.show', data: ['ribos' => $ribo]);
+        $this->ribo = Ribo::findOrFail($id);
+        return view('RiboBlog.show', data: ['ribos' => $this->ribo]);
     }
 
     public function create()

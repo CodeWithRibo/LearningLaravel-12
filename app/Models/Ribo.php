@@ -13,9 +13,9 @@ class Ribo extends Model
 
     public function scopeSorted($query)
     {
-        return $query->orderBy('created_at', 'asc');
+        return $query->orderBy('name', 'asc');
     }
-    
+
     /** @use HasFactory<\Database\Factories\RiboFactory> */
     use HasFactory;
 }

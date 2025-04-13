@@ -12,8 +12,8 @@
         <nav class="flex items-center justify-around py-5">
             <h1 class="text-3xl text-red-700 font-bold">Ribo Blogs</h1>
             <div class="flex gap-5">
-                <a href="/" class="text-2xl text-gray-500 hover:text-gray-700 ">All Ribo Blogs</a>
-                <a href="create" class="text-2xl text-gray-500 hover:text-gray-700 ">Create new Ribo Blogs</a>
+                <a href="{{ route('index') }}" class="text-2xl text-gray-500 hover:text-gray-700 ">All Ribo Blogs</a>
+                <a href="{{ route('create') }}" class="text-2xl text-gray-500 hover:text-gray-700 ">Create new Ribo Blogs</a>
             </div>
         </nav>
     </header>

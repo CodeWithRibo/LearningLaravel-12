@@ -1,27 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\RibosController;
 #Defined on what web browser reponsed in http request
-Route::get('/', function () {
-    $data = [
-        'users' => [
-        ['name' => 'Alice', 'skill' => '69', 'id' => 1], 
-        ['name' => 'Charlie', 'skill' => '70', 'id' => 2], 
-        ['name' => 'Bon', 'skill' => '80', 'id' => 3]],
-    ];
+/* 
+Handle request by Controller
+*/
 
-    return view('RiboBlog.index', ['greeting' => 'Hello', 'users' => $data['users']]);
-});
-
-Route::get('create', function (){
-    return view('RiboBlog.create');
-});
-
-Route::get('/{id}', function ($id) {
-    return view('RiboBlog.show', data: ['id' => $id]);
-});
-
-Route::get('/create',function() {
-    return view('RiboBlog.create');
-});
+Route::get('/', [RibosController::class,'index']); //!HOMEPAGE
+Route::get('create',[RibosController::class,'create'] );//!CREATE
+Route::get('/{id}', [RibosController::class, 'show']);//!SHOW

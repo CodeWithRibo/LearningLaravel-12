@@ -12,7 +12,7 @@ class RibosController extends Controller
 
     public function index()
     {
-        $this->ribo = Ribo::sorted()->get();
+        $this->ribo = Ribo::sorted()->paginate(10);
 
         return view('RiboBlog.index', ['users' => $this->ribo]);
     }

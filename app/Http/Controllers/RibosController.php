@@ -40,10 +40,6 @@ class RibosController extends Controller
 
         Ribo::create($this->validate);
 
-        $bio = $request->old('bio');
-        $name= $request->old('name');
-        $skill = $request->old('skill');
-
-        return view('RiboBlog.create',['bio'=>$bio,'name'=>$name,'skill'=>$skill]);
+        return redirect('/');
     }
 }

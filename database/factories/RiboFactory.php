@@ -22,7 +22,6 @@ class RiboFactory extends Factory
             'skill' => fake()->numberBetween(1,100),
             'status' => fake()->randomElement(['complete','incomplete','progress']),
             'age' => fake()->numberBetween(13,99),
-            // 'dojos_id' => Dojo::inRandomOrder()->first()->id
         ];
     }
 }

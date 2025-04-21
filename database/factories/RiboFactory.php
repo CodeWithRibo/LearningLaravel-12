@@ -19,10 +19,7 @@ class RiboFactory extends Factory
         return [
             'name' => fake()->name(),
             'bio' => fake()->realText(500),
-            'skill' => fake()->numberBetween(1,100),
-            'status' => fake()->randomElement(['complete','incomplete','progress']),
-            'age' => fake()->numberBetween(13,99),
+            'skill' => fake()->numberBetween(1, 100),
         ];
     }
 }
-

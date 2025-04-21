@@ -10,3 +10,6 @@ Handle request by Controller
 Route::get('/', [RibosController::class,'index'])->name('index'); //!HOMEPAGE
 Route::get('create',[RibosController::class,'create'] )->name('create');//!CREATE
 Route::get('/{id}', [RibosController::class, 'show'])->name('show');//!SHOW
+
+//! POST REQUEST
+Route::post('/',[RibosController::class,'store'])->name('store');

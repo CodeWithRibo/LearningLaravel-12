@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ribo extends Model
 {
     #Mass Assginment for columns value
-    protected $fillable = ['name','skill','bio','status'];
+    protected $fillable = ['name','skill','bio'];
     protected $guarded = ['id'];
 
     public function scopeSorted($query)

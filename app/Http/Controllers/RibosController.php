@@ -6,10 +6,11 @@ use App\Models\Ribo;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-
-class RibosController extends Controller 
+class RibosController extends Controller
 {
     protected $ribo;
+    protected $validate;
+
 
     public function index()
     {
@@ -21,23 +22,23 @@ class RibosController extends Controller
     public function show($id)
     {
         $this->ribo = Ribo::findOrFail($id);
-        return view('RiboBlog.show', data: ['ribos' => $this->ribo]);
+        return view('RiboBlog.show', ['ribos' => $this->ribo]);
     }
 
     public function create()
     {
         return view('RiboBlog.create');
-    } 
+    }
 
-    public function store(Request $request) 
+    public function store(Request $request)
     {
-        $validate = $request->validate([
-            'name' => 'required|string|max:255',
-            'skill' => 'required|integer|min:0|max:100',
-            'bio' => 'required|string|min:20|max:1000'
+        $this->validate = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'skill' => ['required','integer','min:0','max:100'],
+            'bio' => ['required','string','min:20','max:1000']
         ]);
 
-        Ribo::create($validate);
+        Ribo::create($this->validate);
 
         return redirect('/');
     }

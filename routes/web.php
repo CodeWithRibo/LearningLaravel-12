@@ -13,3 +13,4 @@ Route::get('/{id}', [RibosController::class, 'show'])->name('show');//!SHOW
 
 //! POST REQUEST
 Route::post('/',[RibosController::class,'store'])->name('store');
+Route::delete('/{id}',[RibosController::class, 'destroy'])->name('RiboBlog.destroy');

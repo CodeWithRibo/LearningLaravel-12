@@ -6,6 +6,7 @@ use App\Models\Ribo;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
+
 class RibosController extends Controller
 {
     protected $ribo;
@@ -41,5 +42,13 @@ class RibosController extends Controller
         Ribo::create($this->validate);
 
         return redirect('/');
+    }
+
+    public function destroy($id)
+    {
+        $this->ribo = Ribo::findOrFail($id);
+        $this->ribo->delete();
+
+        return redirect('/')->with('status','Blog post sucessfully deleted');
     }
 }
